@@ -1,0 +1,13 @@
+/etc/init.d/networking restart
+
+ip route add default via 151.0.45.0
+
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A FORWARD -i eth1 -j ACCEPT
+
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 7070 -j DNAT --to-destination 192.168.88.100:7070
+iptables -A FORWARD -p tcp -d 192.168.88.100 --dport 7070 -j ACCEPT
+
+iptables -P FORWARD DROP

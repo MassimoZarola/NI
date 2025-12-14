@@ -1,0 +1,15 @@
+hostname r5
+password r5zebra
+enable password r5zebra
+
+interface eth1
+    ip address 100.0.0.0/31
+    link-detect
+
+interface eth2
+    ip address 100.0.0.8/31
+    link-detect
+
+interface eth3
+    ip address 100.0.0.6/31
+    link-detect

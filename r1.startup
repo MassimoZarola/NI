@@ -1,0 +1,11 @@
+/etc/init.d/networking restart
+
+/etc/init.d/isc-dhcp-server start
+
+ip route add default via 50.0.0.9
+
+iptables -t nat -A POSTROUTING -o eth2 -j MASQUERADE
+
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A FORWARD -i eth0 -j ACCEPT
+iptables -P FORWARD DROP

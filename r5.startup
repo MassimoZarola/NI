@@ -1,0 +1,5 @@
+/etc/init.d/networking restart
+
+ip route add 50.0.0.0/24 via 193.201.28.1
+
+/etc/init.d/quagga restart

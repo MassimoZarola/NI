@@ -1,0 +1,12 @@
+/etc/init.d/networking restart
+
+/etc/init.d/ssh restart
+
+useradd -m -s /bin/bash ubuntu
+echo -e 'password\npassword\n' | passwd ubuntu
+
+mkdir -p /home/ubuntu/.ssh
+chmod 700 /home/ubuntu/.ssh
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHE7ljBDomKQWZ+rqMebewp/X7cU7123vpX9n0eOQNxj78QuB1/K3uKxjgeWN0I6r5Nnkqhg0OH0s5x6kGwU0AI7XbdUgvw+s7Zy9U8uPDsVFmZqEuVF7YkQFLG4oyxlJhgVti+K+hvrD4ipKHYboAQR7rXcBB7E1LAp7SU14G43oHY2B6/kPJF7e/oHO7ITb31N9OY1Y5l7W4XaVbMuGvwveCVQMIt/X2w8tfpA3hQYBPTKdGbKie8LAKA3WwKaQIc3GKqH6pFtHzA2UeMtk+vTzq8dhNz2HGirRtKcLtbQzVjbKLxIM6aKDFJ/IRz3NAE/CdTFtqLv7mQz5dlX4P root@pc1" > /home/ubuntu/.ssh/authorized_keys
+chmod 600 /home/ubuntu/.ssh/authorized_keys
+chown -R ubuntu:ubuntu /home/ubuntu/.ssh
