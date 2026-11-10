@@ -118,6 +118,3 @@ Sostituire `<interfaccia>` con quella effettivamente interessata al traffico; in
 - `commands.txt`: comando per il port forwarding SSH.
 - `shared/`: certificato CA e file pcap.
 
-## Nota sulle chiavi e credenziali
-
-Il progetto contiene chiavi private SSH e OpenVPN necessarie al laboratorio. Non pubblicarle né riutilizzarle fuori da questo ambiente didattico. Lo startup di `s1` imposta inoltre una password predefinita per `ubuntu`; sostituirla prima di esporre il laboratorio a reti non fidate.
